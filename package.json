@@ -1,0 +1,20 @@
+{
+  "name": "seneca-store-listen",
+  "version": "0.1.0",
+  "description": "Runs and exposes seneca db stores in separate process",
+  "main": "seneca-store-listen.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kamil-mech/seneca-store-listen.git"
+  },
+  "author": {
+    "name": "Kamil Mech"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "seneca": "plugin",
+    "seneca-jsonfile-store": "^0.2.2",
+    "lodash": "^2.4.1",
+    "optimist": "^0.6.1"
+  }
+}
