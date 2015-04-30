@@ -15,8 +15,7 @@ Currently supports:
 Listen feature usage:
 - add code below to your app(before you add any plugins with seneca.use)
 ```
-  var SL = require('seneca-store-listen')
-  var sl = new SL()
+  var sl = require('seneca-store-listen')()
 
   sl.host(db, function(server_config){
     setTimeout(function(){

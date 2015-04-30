@@ -3,7 +3,8 @@
 
 module.exports = function()
 {
-  this.host = function(db, callback){
+  return {
+  host: function(db, callback){
     var fs     = require('fs')
     var seneca = require('seneca')({default_plugins:{'mem-store':false}})
 
@@ -48,5 +49,7 @@ module.exports = function()
       .use(db, db_args)
       .listen(server_config)
     })
+  }
+
   }
 }
