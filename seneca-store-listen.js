@@ -9,7 +9,7 @@ module.exports = function()
     var seneca = require('seneca')({default_plugins:{'mem-store':false}})
 
     // validate db choice
-    var dbs_supported = ['mem-store', 'jsonfile-store']
+    var dbs_supported = ['mem-store', 'jsonfile-store', 'level-store']
     var err
     if (!db) err = 'no db specified' 
     if (dbs_supported.indexOf(db) === -1) err = 'unsupported db: ' + db
@@ -37,7 +37,7 @@ module.exports = function()
       if (db === 'mem-store') {
         db_args = {web:{dump:true}}
       }
-      else if (db === 'jsonfile-store') {
+      else if (db === 'jsonfile-store' || db === 'level-store') {
         db_args = {folder:db_path + db}
       }
 

@@ -1,6 +1,6 @@
 {
   "name": "seneca-store-listen",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Runs and exposes seneca db stores in separate process",
   "main": "seneca-store-listen.js",
   "repository": {
@@ -14,6 +14,7 @@
   "dependencies": {
     "seneca": "plugin",
     "seneca-jsonfile-store": "^0.2.2",
+    "seneca-level-store": "^0.2.1",
     "lodash": "^2.4.1",
     "optimist": "^0.6.1"
   }
