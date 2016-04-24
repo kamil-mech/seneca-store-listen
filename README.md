@@ -1,4 +1,4 @@
-# seneca-store-listen 0.1.0
+# seneca-store-listen 0.1.3
 
 Allow offline seneca stores to listen for seneca connections like regular DBs.
 Uses seneca-transport.
