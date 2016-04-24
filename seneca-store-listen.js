@@ -29,7 +29,7 @@ module.exports = function()
       if (!fs.existsSync(db_path + db)) fs.mkdirSync(db_path + db)
         
       // apply default pins
-      var pins = ['role:entity, cmd:*',  'cmd:ensure_entity',  'cmd:define_sys_entity']
+      var pins = [{role: 'entity', cmd: '*'}, {cmd: 'ensure_entity'}, {cmd: 'define_sys_entity'}]
       var server_config = {host:host, port:port, pins:pins}
 
       // apply db-specific config

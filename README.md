@@ -5,32 +5,32 @@ Uses seneca-transport.
 
 Install:
 ```
-    npm install seneca-store-listen
+npm install seneca-store-listen
 ```
 
 Currently supports:
 - mem-store
 - jsonfile-store
+- level-store
 
-Listen feature usage:
-- add code below to your app(before you add any plugins with seneca.use)
+Usage:
 ```
-  var sl = require('seneca-store-listen')()
+db = 'jsonfile-store'
+var sl = require('seneca-store-listen')()
 
-  sl.host(db, function(server_config){
-    setTimeout(function(){
-      seneca
-      .client(server_config)
-      .ready(function(){
+sl.host(db, function(server_config){
+  setTimeout(function(){
+    seneca = seneca.client(server_config)
 
-        seneca = this
-        
-        // do stuff, e.g.
-        seneca.use('some-plugin')
-        seneca.make$('something').save$()
-        seneca.make$('something').list$()
+    // sample db usage
+    seneca.make$('fruit').save$({name: 'apple'}, function (err, res) {
+      if (err) console.error(err)
+
+      seneca.make$('fruit').load$({name: 'apple'}, function (err, res) {
+        if (err) console.error(err)
+        console.log('res:' + res)
       })
-    }, 2000)
-  })
+    })
+  }, 2000)
+})
 ```
-- run your app
